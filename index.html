@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Travel Explore</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color: #fff;
+      color: #333;
+    }
+
+    header {
+      background: url('https://www.tourmyindia.com/blog//wp-content/uploads/2022/06/Best-Summer-Destinations-in-India.jpg') no-repeat center center/cover;
+      height: 100vh;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 50px;
+      position: relative;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    header .content {
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+      animation: fadeInDown 1.5s ease-out;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    header button {
+      background-color: #ff4b2b;
+      border: none;
+      padding: 15px 30px;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 30px;
+      transition: background 0.3s;
+    }
+
+    header button:hover {
+      background-color: #e43f20;
+    }
+
+    section.places {
+      padding: 60px 40px;
+      text-align: center;
+      animation: fadeInUp 1s ease;
+    }
+
+    section.places h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .card {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+      background-color: #fff;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      padding: 15px;
+      font-size: 1.2rem;
+    }
+
+    section.booking {
+      background: #f9f9f9;
+      padding: 60px 40px;
+      text-align: center;
+      animation: fadeInUp 1s ease;
+    }
+
+    section.booking h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+
+    form input, form select {
+      width: 100%;
+      padding: 12px 15px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    form button {
+      width: 100%;
+      padding: 15px;
+      background: #ff4b2b;
+      border: none;
+      color: white;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    form button:hover {
+      background: #e43f20;
+    }
+
+    footer {
+      padding: 40px 20px;
+      background-color: #f5f5f5;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      header p {
+        font-size: 1rem;
+      }
+
+      form {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="content">
+      <h1>Explore The World</h1>
+      <p>Find the most beautiful places around the India and experience the adventure of a lifetime.</p>
+      <button onclick="scrollToSection()">Explore Now</button>
+    </div>
+  </header>
+
+  <section class="places" id="places">
+    <h2>Beautiful Destinations</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="https://sikkimtourism.org/wp-content/uploads/2022/04/sikkim.jpg" alt="sikkim">
+        <h3>North Sikkim</h3>
+      </div>
+      <div class="card">
+        <img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/06/ef/e1/78.jpg" alt="Rajasthan">
+        <h3>Hawa Mahal,Jaipur</h3>
+      </div>
+      <div class="card">
+        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2f/d6/36/0e/caption.jpg?w=1400&h=-1&s=1" alt="kashmir">
+        <h3>Aru valley,kashmir</h3>
+      </div>
+      <div class="card">
+        <img src="https://scontent-ccu2-2.xx.fbcdn.net/v/t39.30808-6/470815380_2050887285341631_44506060695646366_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=fg_kjdOAL6kQ7kNvwEZlhyj&_nc_oc=Adl2VZRkNfue_kFwNP05owCDf88nY6rdb2AUKv-3EOZCrb5JCmB4uhKXa_T6v1jCLl8&_nc_zt=23&_nc_ht=scontent-ccu2-2.xx&_nc_gid=_AeTwMyWe_ZNKWqyS0FvpQ&oh=00_AfIt-otpo-FP9N8BmU9ggb1NgMY6lb75XxfylBbbueGSwA&oe=682A4A8C" alt="Meghalaya">
+        <h3>Wari Chora,Meghalaya</h3>
+      </div>
+    </div>
+  </section>
+
+  <section class="booking" id="booking">
+    <h2>Book Your Trip</h2>
+    <form>
+      <input type="text" placeholder="Full Name" required />
+      <input type="email" placeholder="Email Address" required />
+      <select required>
+        <option value="">Select Destination</option>
+        <option>Sikkim</option>
+        <option>Rajasthan</option>
+        <option>kashmir</option>
+        <option>Meghalaya</option>
+      </select>
+      <input type="date" required />
+      <button type="submit">Book Now</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 Travel Explore. All rights reserved.
+  </footer>
+
+  <script>
+    function scrollToSection() {
+      document.getElementById('places').scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+
+</body>
+</html>
